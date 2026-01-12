@@ -1,0 +1,194 @@
+ Q1>.code on blinking of led.
+int redLED = 8;     // Red LED connected to digital pin 8
+int greenLED = 9;   // Green LED connected to digital pin 9
+int yellowLED = 10; // Yellow LED connected to digital pin 10
+
+void setup() {
+  // Set pins as output
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+}
+
+void loop() {
+  // Turn on Red LED
+  digitalWrite(redLED, HIGH);
+  delay(500); // wait 0.5 seconds
+  digitalWrite(redLED, LOW);
+
+  // Turn on Green LED
+  digitalWrite(greenLED, HIGH);
+  delay(500);
+  digitalWrite(greenLED, LOW);
+
+  // Turn on Yellow LED
+  digitalWrite(yellowLED, HIGH);
+  delay(500);
+  digitalWrite(yellowLED, LOW);
+}
+
+Q2>Arduino uno code on potentiometer
+
+// Pin assignments
+int potPin = A0;   // Potentiometer connected to analog pin A0
+int ledPin = 9;    // LED connected to digital pin 9 (PWM pin)
+
+int potValue = 0;  // Variable to store potentiometer value
+int ledValue = 0;  // Variable to store mapped LED brightness
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600); // For debugging, prints values to Serial Monitor
+}
+
+void loop() {
+  // Read potentiometer (0–1023)
+  potValue = analogRead(potPin);
+
+  // Map to LED brightness (0–255)
+  ledValue = map(potValue, 0, 1023, 0, 255);
+
+  // Set LED brightness
+  analogWrite(ledPin, ledValue);
+
+  // Print values to Serial Monitor
+  Serial.print("Potentiometer: ");
+  Serial.print(potValue);
+  Serial.print("  LED Brightness: ");
+  Serial.println(ledValue);
+
+  delay(10); // Small delay for stability
+}
+
+Q3>Write Arduino uno code on photoresistor
+// Define pins
+int ldrPin = A0;       // LDR connected to analog pin A0
+int ledPin = 9;        // LED connected to digital pin 9 (PWM capable)
+
+void setup() {
+  Serial.begin(9600);       // Start serial monitor
+  pinMode(ledPin, OUTPUT);  // Set LED pin as output
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin);   // Read LDR value (0–1023)
+  Serial.println(ldrValue);            // Print value to Serial Monitor
+
+  // Map LDR value to LED brightness (0–255)
+  int brightness = map(ldrValue, 0, 1023, 255, 0);
+  analogWrite(ledPin, brightness);
+
+  delay(100); // Small delay for stability
+}
+
+Q4>Arduino uno code on temperature sensor.
+// Pin connections
+int sensorPin = A0;     // LM35 connected to Analog pin A0
+int buzzerPin = 8;      // Buzzer connected to digital pin 8
+int ledPin = 9;         // LED connected to digital pin 9
+
+// Threshold temperature in Celsius
+float threshold = 30.0;
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600); // For monitoring temperature
+}
+
+void loop() {
+  // Read analog value from LM35
+  int sensorValue = analogRead(sensorPin);
+
+  // Convert to voltage (5V reference, 10-bit ADC)
+  float voltage = sensorValue * (5.0 / 1023.0);
+
+  // Convert voltage to temperature (10 mV per °C)
+  float temperatureC = voltage * 100.0;
+
+  // Print temperature to Serial Monitor
+  Serial.print("Temperature: ");
+  Serial.print(temperatureC);
+  Serial.println(" °C");
+
+  // Check if temperature exceeds threshold
+  if (temperatureC > threshold) {
+    digitalWrite(buzzerPin, HIGH); // Turn buzzer ON
+    digitalWrite(ledPin, HIGH);    // Turn LED ON
+  } else {
+    digitalWrite(buzzerPin, LOW);  // Turn buzzer OFF
+    digitalWrite(ledPin, LOW);     // Turn LED OFF
+  }
+
+  delay(1000); // Wait 1 second before next reading
+}
+[5:28 pm, 12/01/2026] Vaishnavi Wasule🩷 (Sit): <html>
+<head>
+<style type="text/css">
+body{background-color:pink;}
+h1{background-color:#0000FF;}
+p{background-color:rgb(0,255,0);}
+</style>
+</head>
+<body>
+<h1>Java made simple</h1>
+<P>Java was invented by SUM MICRO </P>
+</body>
+</html>
+[5:28 pm, 12/01/2026] Vaishnavi Wasule🩷 (Sit): <!DOCTYPE=html>
+<html>
+<head>
+<title>my first page</title>
+<style>
+table,th,td{
+border:2px solid black;
+border-collapse:collapse;
+}
+</style></head>
+<body>
+<table width=80%>
+<caption><b> Student data </b></caption>
+<tr>
+<th rowspan =2>PRN</th>
+<th rowspan=2>NAME</th>
+<th colspan=3>MARKS</th>
+</tr>
+<tr>
+<th>sub1</th>
+<th>sub2</th>
+<th>sub3</th>
+</tr>
+<tr>
+<td>25070521061</td>
+<td>Vaishnavi wasule</td>
+<td>90</td>
+<td>87</td>
+<td>85</td>
+</tr>
+</table> 
+<ul>
+<li>pineapple</li>
+<li>dragonfruit</li>
+<li>grapes</li> 
+<li>apple</li>
+</ul>
+<ol type=i>
+<li>pineapple</li>
+<li>dragonfruit</li>
+<li>grapes</li> 
+<li>apple</li>
+</ol>
+<ol reversed>
+<li>pineapple</li>
+<li>dragonfruit</li>
+<li>grapes</li> 
+<li>apple</li>
+</ol>
+<ol start =50>
+<li>pineapple</li>
+<li>dragonfruit</li>
+<li>grapes</li> 
+<li>apple</li>
+</ol>
+</body>
+</html>
