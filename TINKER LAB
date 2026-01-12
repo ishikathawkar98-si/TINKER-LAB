@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Languages</title>
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fc;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .language {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+           
+        }
+        .language h2 {
+            color: #0073e6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Popular Computer Languages</h1>
+
+<!-- Inline CSS -->
+<div class="language" style="background-color: #e8f5e9;">
+    <h2>Python</h2>
+    <p>Python is a versatile, high-level programming language known for its simplicity and readability. It is widely used in web development, data analysis, artificial intelligence, and more.</p>
+</div>
+
+
+<div class="language" style="background-color: #fff3e0;">
+    <h2>JavaScript</h2>
+    <p>JavaScript is a dynamic programming language primarily used for creating interactive web pages. It is a core technology of the World Wide Web alongside HTML and CSS.</p>
+</div>
+
+
+<div class="language" style="background-color: #e3f2fd;">
+    <h2>Java</h2>
+    <p>Java is a object-oriented programming language widely used for building enterprise-level applications, Android apps, and more.</p>
+</div>
+</body> </html>
